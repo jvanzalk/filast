@@ -7,7 +7,7 @@ setup(
     author_email='johnvanzalk@gmail.com',
     packages=['filast'],
     # Dependencies
-    #install_requires=['numpy'],
+    install_requires=['pandas'],
     version='0.1',
     license='',
     description='A tool for determining email syntaxes and predicting emails',
