@@ -1,3 +1,5 @@
+import pandas as pd
+
 def syntax(df, first_name, last_name, email):
 
     df.dropna()
@@ -41,7 +43,7 @@ def syntax(df, first_name, last_name, email):
 
         #rank positions so that largest number is 3
 
-        positions = pandas.DataFrame({
+        positions = pd.DataFrame({
             'position' : positions
         })
 
