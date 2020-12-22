@@ -41,7 +41,7 @@ def syntax(df, first_name, last_name, email):
 
         #rank positions so that largest number is 3
 
-        positions = pd.DataFrame({
+        positions = pandas.DataFrame({
             'position' : positions
         })
 
