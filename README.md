@@ -6,9 +6,13 @@ With the **filast** package, any **Python** user can fill in missing emails in t
 
 Emails are compsed of two parts: a username, and a domain. 
 
-<img src="email_parts.PNG" height="120px" />
+<img src="images/email_parts.PNG" height="120px" />
 
-The majority of email usernames are composed of a combination of the following:
+There are free email domains like gmail.com or aol.com, and company domains like oracle.com or toshiba.com.
+
+The usernames with free email domains are very unrestricted. For example, John Smith could chose to make his email jsmith@gmail.com or j.smith88@gmail.com. Whereas, at company's it is common practice to issue employees email addresses with the same username syntax. That's what makes them predictable.
+
+The majority of company email usernames are composed of a combination of some the following:
 * first name
 * last name
 * first initial
@@ -32,7 +36,7 @@ We can extract information from the 3 base fields to produce a dataframe like th
 
 Then, we can determine the position of the names, initial and common symbols in the email username.
 
-
+<img src="images/positions.PNG" height="120px" />
 
 If the ___ does not exist, we leave a 0.
 
@@ -40,13 +44,11 @@ If the ___ does not exist, we leave a 0.
 | ---------- | --------- | ------------- | ------------ | --- | ---------- |
 | 0          | 2         | 1             | 0            | 0   | 0          | 
 
-
-
-
-
-### Determining A Company's Email Domain
+The username syntax code for this example is 021000. There are twenty possible codes with these six __ and you can find them all here.
 
 ### Determining A Company's Email Username Syntax
+
+### Determining A Company's Email Domain
 
 ## Installation
 
