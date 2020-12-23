@@ -9,6 +9,7 @@ setup(
     # Dependencies
     install_requires=['pandas','fuzzywuzzy','python-Levenshtein'],
     include_package_data=True,
+    package_data={'': ['filast/data/*.csv']},
     version='0.1',
     license='MIT',
     description='A tool for determining email syntaxes and predicting emails'
