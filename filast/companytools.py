@@ -123,22 +123,14 @@ def domain(df, co_name, email, contacts=5, domain_pct=80, co_domain_match_pct=60
     df['unique'] = df['domain'].map(df['domain'].value_counts())
     df.loc[df['unique']>1, 'unique'] = 0
     
-    #Load dataframe with free email domains (e.g., gmail.com, aol.com)
-    free_domains = pd.read_csv('data/free_domains.csv',encoding = "ISO-8859-1")
-    
-    #Create a new column that indiactes if a company domain matches a free email domain
-    df['free_domain'] = 0
-    df.loc[df['domain'].isin(free_domains['domain']), 'free_domain'] = 1
-    
     #Create a column called 'doubt' to indicate if their is doubt about a company domain being correct.
     df['doubt'] = 1
     
     #doubt = 0 if:
     # - The company has X number of contacts and the percent of contacts with the domain is greater than X OR
     # - The company name and domain match by more than X% AND
-    # - The domain is not a free email domain AND
     # - The domain is unique
 
-    df.loc[(((df['contacts']>contacts)&(df['domain_pct']>domain_pct))|(df['co_domain_match_pct']>co_domain_match_pct))&(df['free_domain']==0)&(df['unique']==1), 'doubt'] = 0
+    df.loc[(((df['contacts']>contacts)&(df['domain_pct']>domain_pct))|(df['co_domain_match_pct']>co_domain_match_pct))&(df['unique']==1), 'doubt'] = 0
     
     return df
