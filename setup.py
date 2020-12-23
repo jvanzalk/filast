@@ -7,10 +7,11 @@ setup(
     author_email='johnvanzalk@gmail.com',
     packages=['filast'],
     # Dependencies
-    install_requires=['pandas'],
+    install_requires=['pandas','fuzzywuzzy','python-Levenshtein'],
+    include_package_data=True,
     version='0.1',
     license='MIT',
-    description='A tool for determining email syntaxes and predicting emails',
+    description='A tool for determining email syntaxes and predicting emails'
     # Readme
     # long_description=open('README.txt').read(),
 )
