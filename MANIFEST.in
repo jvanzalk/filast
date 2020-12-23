@@ -1,1 +1,1 @@
-recursive-include filast/data/free_email_domains.csv
+include filast/data/free_email_domains.csv
