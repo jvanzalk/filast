@@ -124,7 +124,7 @@ def domain(df, co_name, email, contacts=5, domain_pct=80, co_domain_match_pct=60
     df.loc[df['unique']>1, 'unique'] = 0
     
     #Load dataframe with free email domains (e.g., gmail.com, aol.com)
-    free_domains = pd.read_csv('free_domains.csv',encoding = "ISO-8859-1")
+    free_domains = pd.read_csv('../free_domains.csv',encoding = "ISO-8859-1")
     
     #Create a new column that indiactes if a company domain matches a free email domain
     df['free_domain'] = 0
