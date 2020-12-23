@@ -1,7 +1,7 @@
 import pandas as pd
 from fuzzywuzzy import process, fuzz
 
-def username(df, first_name, last_name, email):
+def username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60):
 
     df.dropna()
 
@@ -75,7 +75,26 @@ def username(df, first_name, last_name, email):
         else:
             codes.append(''.join(map(str, positions)))
 
-    df['syntax'] = codes
+    df['syntax_code'] = codes
+    
+    #Create a new column that indicates the number of contacts (rows) per company
+    df['contacts'] = df[co_name].map(df[co_name].value_counts())
+    
+    #Group rows by company name and count the number of rows with each syntax
+    df = df.groupby([co_name, 'syntax_code', 'contacts']).size().reset_index(name='syntax_count')
+    df['syntax_count'] = df['syntax_count'].astype(float)
+    
+    #Take percentage of number of contacts with a syntax to total number of contacts in each company
+    df['syntax_pct'] = round((df['syntax_count']/df['contacts'])*100,0)
+    
+    #Keep the username syntax with the maximum percent for each company
+    df = df.sort_values('syntax_pct', ascending=False).drop_duplicates(co_name).sort_index()
+    
+    #Create a column called 'doubt' to indicate if their is doubt about a company username syntax being correct
+    df['doubt'] = 1
+    
+    #doubt = 0 if the company has X number of contacts and the percent of contacts with the same syntax is greater than X
+    df.loc[(df['contacts']>contacts)&(df['syntax_pct']>syntax_pct), 'doubt'] = 0
     
     return df
 
@@ -105,7 +124,7 @@ def domain(df, co_name, email, contacts=5, domain_pct=80, co_domain_match_pct=60
     df.loc[df['unique']>1, 'unique'] = 0
     
     #Load dataframe with free email domains (e.g., gmail.com, aol.com)
-    free_domains = pd.read_csv('../Recruitment Pipeline/free_domains.csv',encoding = "ISO-8859-1")
+    free_domains = pd.read_csv('free_domains.csv',encoding = "ISO-8859-1")
     
     #Create a new column that indiactes if a company domain matches a free email domain
     df['free_domain'] = 0
