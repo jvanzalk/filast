@@ -22,31 +22,35 @@ The majority of company email usernames are composed of a combination of some th
 
 The most common combination is first initial + last name; or **filast** (hence the name of the package).
 
-If you have the email, first and last name for a contact, you can determine what their email username syntax is. 
+If email, first and last name are populated for a contact, there's a good chance their email username syntax can be predicted. 
 
 | Email            | First Name | Last Name |
 | ---------------- | ---------- | --------- | 
 | jsmith@gmail.com | John       | Smith     | 
 
-We can extract information from the 3 base fields to produce a dataframe like this:
+From those 3 base fields, this package extracts further information:
 
 | Email            | First Name | Last Name | First Initial | Last Initial | Dot | Underscore | Username |
 | ---------------- | ---------- | --------- | ------------- | ------------ | --- | ---------- | -------- |
 | jsmith@gmail.com | john       | smith     | j             | s            | .   | _          | jsmith   |
 
-Then, we can determine the position of the names, initial and common symbols in the email username.
+Then, it determine the position of the names, initials, and symbols in the email username.
 
 <img src="images/positions.PNG" height="120px" />
 
-If the ___ does not exist, we leave a 0.
+If a name, initial, or symbol does not exist, a 0 is returned.
 
 | First Name | Last Name | First Initial | Last Initial | Dot | Underscore |
 | ---------- | --------- | ------------- | ------------ | --- | ---------- |
 | 0          | 2         | 1             | 0            | 0   | 0          | 
 
-The username syntax code for this example is 021000. There are twenty possible codes with these six __ and you can find them all here.
+Reading the column values from left to right reveals the username syntax code (021000 for this example). There are twenty possible codes from the six names, initials, and symbols and they are listed here.
+
+If multiple contacts are possesed for a company, the username and domain can be predicted using the functions below.
 
 ### Determining A Company's Email Username Syntax
+
+
 
 ### Determining A Company's Email Domain
 
