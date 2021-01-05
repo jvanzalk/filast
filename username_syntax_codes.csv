@@ -1,0 +1,21 @@
+,First Name,Last Name,First Initial,Last Initial,.,_,Username Syntax Code
+first,1,0,0,0,0,0,100000
+last,0,1,0,0,0,0,010000
+firstlast,1,2,0,0,0,0,120000
+lastfirst,2,1,0,0,0,0,210000
+first.last,1,3,0,0,2,0,130020
+last.first,3,1,0,0,2,0,310020
+first_last,1,3,0,0,0,2,130002
+last_first,3,1,0,0,0,2,310002
+filast,0,2,1,0,0,0,021000
+lastfi,0,1,2,0,0,0,012000
+firstli,1,0,0,2,0,0,100200
+lifirst,2,0,0,1,0,0,200100
+fi.last,0,3,1,0,2,0,031020
+last.fi,0,1,3,0,2,0,013020
+first.li,1,0,0,3,2,0,100320
+li.first,3,0,0,1,2,0,300120
+fi_last,0,3,1,0,0,2,031002
+last_fi,0,1,3,0,0,2,013002
+first_li,1,0,0,3,0,2,100302
+li_first,3,0,0,0,0,2,300002
