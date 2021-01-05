@@ -51,7 +51,7 @@ If multiple contacts are possesed for a company, the username and domain can be 
 ### Determining A Company's Email Username Syntax
 
 ``` python
-username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60):
+username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60)
 ```
 #### Arguments
 
@@ -70,6 +70,23 @@ username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60):
 **syntax_pct:** minimum percentage of contacts with the same username syntax that a company must have for a definite decision on the username. Default is 60.
 
 ### Determining A Company's Email Domain
+
+``` python
+domain(df, co_name, email, contacts=5, domain_pct=80, co_domain_match_pct=60)
+```
+#### Arguments
+
+**df:** data frame of contacts
+
+**co_name:** column name for data frame column that contains company names. Must be enclosed in quotation marks.
+
+**email:** column name for data frame column that contains the contacts emails. Must be enclosed in quotation marks.
+
+**contacts:** minimum number of contacts that a company must have for a definite decision on the domain. Default is 5.
+
+**domain_pct:** minimum percentage of contacts with the same domain that a company must have for a definite decision on the domain. Default is 80.
+
+**co_domain_match_pct:** minimum percentage match between company name and domain for a definite decision on the domain. Default is 60.
 
 ## Installation
 
