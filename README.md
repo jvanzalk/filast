@@ -44,7 +44,7 @@ If a name, initial, or symbol does not exist, a 0 is returned.
 | ---------- | --------- | ------------- | ------------ | --- | ---------- |
 | 0          | 2         | 1             | 0            | 0   | 0          | 
 
-Reading the column values from left to right reveals the username syntax code (021000 for this example). There are twenty possible codes from the six names, initials, and symbols and they are listed here.
+Reading the column values from left to right reveals the username syntax code (021000 for this example). There are twenty possible codes from the six names, initials, and symbols and they are listed [here](https://github.com/jvanzalk/filast/blob/main/username_syntax_codes.csv).
 
 If multiple contacts are possesed for a company, the username and domain can be predicted using the functions below.
 
