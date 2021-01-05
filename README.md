@@ -51,7 +51,7 @@ If multiple contacts are possesed for a company, the username and domain can be 
 ### Determining A Company's Email Username Syntax
 
 ``` python
-username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60)
+companytools.username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60)
 ```
 #### Arguments
 
@@ -72,7 +72,7 @@ username(df, co_name, first_name, last_name, email, contacts=5, syntax_pct=60)
 ### Determining A Company's Email Domain
 
 ``` python
-domain(df, co_name, email, contacts=5, domain_pct=80, co_domain_match_pct=60)
+companytools.domain(df, co_name, email, contacts=5, domain_pct=80, co_domain_match_pct=60)
 ```
 #### Arguments
 
@@ -96,9 +96,3 @@ The **filast** package can be installed directly from **GitHub** with
 pip install git+https://github.com/jvanzalk/filast.git
 from filast import companytools
 ```
-
-If you encounter a bug, have usage questions, or want to share ideas to
-make this package better, feel free to file an
-[issue]().
-
-## License
